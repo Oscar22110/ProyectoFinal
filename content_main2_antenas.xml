@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main2Antenas"
+    tools:showIn="@layout/activity_main2_antenas">
+
+    <EditText
+        android:id="@+id/txtidantena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="ID Antena:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <EditText
+        android:id="@+id/txtnomAnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Nombre Antena:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtidantena" />
+
+    <EditText
+        android:id="@+id/txtmodeloAnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Modelo:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtnomAnt" />
+
+    <EditText
+        android:id="@+id/txttipoAntt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Tipo Antena:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtmodeloAnt" />
+
+    <Button
+        android:id="@+id/btnInsertAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/botones"
+        android:onClick="btnAgregarAntena"
+        android:text="Agregar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnConsulAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnConsultarAntena"
+        android:text="Consultar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsertAnt" />
+
+    <Button
+        android:id="@+id/btnUpdateAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnActualizarAntena"
+        android:text="actualizar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsulAnt" />
+
+    <Button
+        android:id="@+id/btnDeleteAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnBorrarAntena"
+        android:text="borrar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateAnt" />
+
+    <Button
+        android:id="@+id/btnLimpiarAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="LimpiarAnt"
+        android:text="limpiar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteAnt" />
+
+    <Button
+        android:id="@+id/btnCargaAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="getAllAntenas"
+        android:text="cargar datos"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiarAnt" />
+
+    <Button
+        android:id="@+id/btnListaAnt"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnListaAnt"
+        android:text="lista"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargaAnt" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/antenas"
+        android:tint="@color/primary_text"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
