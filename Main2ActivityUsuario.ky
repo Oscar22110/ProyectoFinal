@@ -1,0 +1,176 @@
+package com.example.proyect
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+
+import kotlinx.android.synthetic.main.activity_main2_usuario.*
+import kotlinx.android.synthetic.main.content_main2_activity_usuario.*
+import kotlinx.android.synthetic.main.content_main2_comunidades.*
+import kotlinx.android.synthetic.main.content_main2_comunidades.txtCorrUsuario
+import org.json.JSONObject
+
+class Main2ActivityUsuario : AppCompatActivity() {
+    val IP = "http://192.168.56.1" //direccion ip del servidor web que almacena los servicios web
+    var bandera: Boolean = false
+    var clave = 0
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main2_usuario)
+        setSupportActionBar(toolbar)
+
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+    }
+
+
+    fun getAllUsuarios(v: View) {
+        val wsURL = IP + "/WSUsuarios/getUsuarios.php"
+        val admin = adminBD(this)
+        admin.Ejecuta("DELETE FROM usuario")
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST, wsURL, null,
+            Response.Listener { response ->
+                val succ = response["success"]
+                val msg = response["message"]
+                val sensadoJson = response.getJSONArray("usuario")
+                for (i in 0 until sensadoJson.length()) {
+                    //los nombres del getstring son como los arroja el servicio web
+                    val corr = sensadoJson.getJSONObject(i).getString("correoUsr")
+                    val nomusu = sensadoJson.getJSONObject(i).getString("nomusr")
+
+                    val sentencia =
+                        "Insert into usuario(correoUsr,nomusr) values ('${corr}','${nomusu}')"
+                    val res = admin.Ejecuta(sentencia)
+                }
+                Toast.makeText(this, "Usuario Agregado", Toast.LENGTH_SHORT).show();
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(
+                    this,
+                    "Error getAllUsuarios:" + error.message.toString(),
+                    Toast.LENGTH_SHORT
+                ).show();
+                Log.d("García", error.message.toString())
+            }
+        )
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+    }
+
+    //Rutina para mandar ejecutar un web service de tipo INSERT,UPdate o DElete
+    fun sendRequest(wsURL: String, jsonEnt: JSONObject) {
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.POST, wsURL, jsonEnt,
+            Response.Listener { response ->
+                val succ = response["success"]
+                val msg = response["message"]
+                if (succ == 200) {
+                    txtCorrUsuario.setText("")
+                    txtNomUsuario.setText("")
+                    txtCorrUsuario.requestFocus()
+                    Toast.makeText(
+                        this,
+                        "Success:${succ} Message:${msg} Se Inserto El usuario en el Servidor Web",
+                        Toast.LENGTH_SHORT
+                    ).show();
+                }
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, "${error.message}", Toast.LENGTH_SHORT).show();
+                Log.d("ERROR", "${error.message}");
+                Toast.makeText(this, "Error de capar 8 checa el URL", Toast.LENGTH_SHORT).show();
+            }
+        )
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+    }
+
+    fun btnConsultarUsuario(v: View) {
+        if (txtCorrUsuario.text.toString().isEmpty()) {
+            txtCorrUsuario.setError("Falta ingresar clave del producto")
+            txtCorrUsuario.requestFocus()
+        } else {
+            val wsURL = IP + "/WSUsuarios/getUsuario.php"
+            val corr = txtCorrUsuario.text.toString()
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("correoUsr",corr)
+            val jsonObjectRequest = JsonObjectRequest(
+                Request.Method.POST, wsURL, jsonEntrada,
+                Response.Listener { response ->
+                    val succ = response["success"]
+                    val msg = response["message"]
+                    if (succ == 200) {
+                        val sensadoJson = response.getJSONArray("usuario")
+                        //Los nombres del getString son como los arroja el servicio web val idprod = sensadoJson.getJSONObject(i).getString("idProd")
+                        val corr = sensadoJson.getJSONObject(0).getString("correoUsr")
+                        val nom = sensadoJson.getJSONObject(0).getString("nomusr")
+
+
+
+                        txtCorrUsuario.setText(corr)
+                        txtNomUsuario.setText(nom)
+
+                    }
+                    Toast.makeText(this, "Usuario Cargado ", Toast.LENGTH_LONG).show();
+                },
+                Response.ErrorListener { error ->
+                    Toast.makeText(
+                        this,
+                        "Error getALLProductos:  " + error.message.toString(),
+                        Toast.LENGTH_SHORT).show();
+                    Log.d("García", error.message.toString())
+                }
+            )
+            VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
+        }
+    }
+
+    fun btnActualizarUsuario(v: View) {
+        if (txtCorrUsuario.text.toString().isEmpty() || txtNomUsuario.text.toString().isEmpty()) {
+            txtCorrUsuario.setError("Falta información por agregar")
+            txtCorrUsuario.requestFocus()
+        } else {
+            val corr = txtCorrUsuario.text.toString()
+            val nom = txtNomUsuario.text.toString()
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("correoUsr", corr)
+            jsonEntrada.put("nomusr", nom)
+            sendRequest(IP + "/WSUsuarios/updateUsuario.php", jsonEntrada)
+        }
+    }
+
+    fun Limpiar(v: View){
+        txtCorrUsuario.setText("")
+        txtNomUsuario.setText("")
+
+    }
+
+    fun btnBorrarUsuario(v: View){
+        if (txtCorrUsuario.text.toString().isEmpty()){
+            txtCorrUsuario.setError("Falta información en la clave")
+            txtCorrUsuario.requestFocus()
+        }else{
+            val corr = txtCorrUsuario.text.toString()
+            var jsonEntrada = JSONObject()
+            jsonEntrada.put("correoUsr",corr)
+            sendRequest(IP + "/WSUsuarios/deleteUsuario.php",jsonEntrada)
+        }
+    }
+
+    fun btnLista(v: View){
+        var actividad = Intent(this,Main2ActivityRecyclerUsuarios::class.java)
+        startActivity(actividad)
+    }
+
+
+}
