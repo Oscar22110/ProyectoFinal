@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Proyect</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2_registro">RephoneCom</string>
+    <string name="title_activity_main2_comunidades">RephoneCom</string>
+    <string name="title_activity_main2_antenas">RephoneCom</string>
+    <string name="title_activity_main2_reportes">RephoneCom</string>
+    <string name="title_activity_main2_administrador">RephoneCom</string>
+    <string name="title_activity_main2_empleado">RephoneCom</string>
+    <string name="title_activity_main2_emple_grafic">RephoneCom</string>
+    <string name="title_activity_main2_usuario">RephoneCom</string>
+    <string name="title_activity_main2_recycler_usuarios">RephoneCom</string>
+
+
+</resources>
