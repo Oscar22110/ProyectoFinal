@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main2Reportes"
+    tools:showIn="@layout/activity_main2_reportes">
+
+    <EditText
+        android:id="@+id/txtNumReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Número Reporte:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/txtEmpleReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Nombre Empleado:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumReport" />
+
+    <EditText
+        android:id="@+id/txtCalidadReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Calidad:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmpleReport" />
+
+    <EditText
+        android:id="@+id/txtIntensiReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Intensidad:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCalidadReport" />
+
+    <EditText
+        android:id="@+id/txtCxqReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Cxq:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntensiReport" />
+
+    <EditText
+        android:id="@+id/txtVeloReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Velocidad:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCxqReport" />
+
+    <Button
+        android:id="@+id/btnInsertReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/botones"
+        android:onClick="btnAgregarReporte"
+        android:text="agregar"
+        android:textColor="#D0F5F2F2"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnConsulReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnConsultarReporte"
+        android:text="consultar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toEndOf="@+id/txtNumReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsertReport" />
+
+    <Button
+        android:id="@+id/btnUpdateReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnActualizarReporte"
+        android:text="actualizar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toEndOf="@+id/txtEmpleReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsulReport" />
+
+    <Button
+        android:id="@+id/btnDeleteReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnBorrarReporte"
+        android:text="Borrar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toEndOf="@+id/txtCalidadReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdateReport" />
+
+    <Button
+        android:id="@+id/btnLimpiReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="LimpiarAnt"
+        android:text="limpiar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@+id/txtIntensiReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteReport" />
+
+    <Button
+        android:id="@+id/btnCargaReport"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="getAllReportes"
+        android:text="cargar datos"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toEndOf="@+id/txtCxqReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiReport" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:tint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/reportes" />
+
+    <Button
+        android:id="@+id/btnListaReportes"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnListaReport"
+        android:text="lista"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@+id/txtVeloReport"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargaReport" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
