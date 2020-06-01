@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.proyect">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Main2ActivityRecyclerGrafica"></activity>
+        <activity
+            android:name=".Main2ActivityRecyclerUsuarios"
+            android:label="@string/title_activity_main2_recycler_usuarios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2ActivityUsuario"
+            android:label="@string/title_activity_main2_usuario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Main2ActivityGRAFICA" />
+        <activity
+            android:name=".Main2ActivityEmpleGrafic"
+            android:label="@string/title_activity_main2_emple_grafic"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2ActivityEmpleado"
+            android:label="@string/title_activity_main2_empleado"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2ActivityAdministrador"
+            android:label="@string/title_activity_main2_administrador"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Main2ActivityGragicaReport" />
+        <activity android:name=".Main2ActivityRecyclerReportes" />
+        <activity android:name=".Main2ActivityRecyclerAntenas" />
+        <activity android:name=".RecylerAntenas" />
+        <activity android:name=".Main2ActivityRecyclerComunidades" />
+        <activity
+            android:name=".Main2Reportes"
+            android:label="@string/title_activity_main2_reportes"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2Antenas"
+            android:label="@string/title_activity_main2_antenas"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2Comunidades"
+            android:label="@string/title_activity_main2_comunidades"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main2Registro"
+            android:label="@string/title_activity_main2_registro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
