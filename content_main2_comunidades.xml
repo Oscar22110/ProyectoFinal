@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main2Comunidades"
+    tools:showIn="@layout/activity_main2_comunidades">
+
+
+    <EditText
+        android:id="@+id/txtClaveComu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Clave Comunidad:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorHint="@color/primary_text"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/txtNomComu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Nombre Comunidad:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtClaveComu" />
+
+    <EditText
+        android:id="@+id/txtCorrUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Encargado:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/colorPrimary"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomComu" />
+
+    <Button
+        android:id="@+id/btnInsertComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/botones"
+        android:onClick="btnAgregarComunidad"
+        android:text="agregar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnConsulComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnConsultarComunidad"
+        android:text="consultar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInsertComu" />
+
+    <Button
+        android:id="@+id/btnActualizarComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="btnActualizarComunidad"
+        android:text="actualizar"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsulComu" />
+
+    <Button
+        android:id="@+id/btnBorrarComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="btnBorrarComunidad"
+        android:text="borrar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarComu" />
+
+    <Button
+        android:id="@+id/btnLimpiarComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="Limpiar"
+        android:text="limpiar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorrarComu" />
+
+    <Button
+        android:id="@+id/btnCargaComu"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="getAllComunidades"
+        android:text="cargar datos"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiarComu" />
+
+    <Button
+        android:id="@+id/btnLista"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnLista"
+        android:text="Lista"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargaComu" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/comunidades"
+        android:tint="@color/primary_text"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
