@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Main2ActivityUsuario"
+    tools:showIn="@layout/activity_main2_usuario">
+
+    <Button
+        android:id="@+id/btnupdateUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botones"
+        android:onClick="btnActualizarUsuario"
+        android:text="actualizar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConsulUsuario" />
+
+    <Button
+        android:id="@+id/btnConsulUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/botones"
+        android:onClick="btnConsultarUsuario"
+        android:text="consultar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNomUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Nombre:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorrUsuario" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="28dp"
+        android:tint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usuario" />
+
+    <EditText
+        android:id="@+id/txtCorrUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:ems="10"
+        android:hint="Correo:"
+        android:inputType="textPersonName"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <Button
+        android:id="@+id/btndeleteUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="btnBorrarUsuario"
+        android:text="borrar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@+id/txtNomUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/btnupdateUsuario" />
+
+    <Button
+        android:id="@+id/btnCargarUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="getAllUsuarios"
+        android:text="cargar datos"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLimpiarUsuario" />
+
+    <Button
+        android:id="@+id/btnListaUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="btnLista"
+        android:text="lista"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCargarUsuario" />
+
+    <Button
+        android:id="@+id/btnLimpiarUsuario"
+        android:layout_width="124dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botones"
+        android:onClick="Limpiar"
+        android:text="limpiar"
+        android:textColor="@color/primary_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btndeleteUsuario" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
